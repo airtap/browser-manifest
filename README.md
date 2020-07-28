@@ -55,13 +55,15 @@ Optional but recommended. A string for display purposes, for humans to identify 
 An optional object describing (airtap) features that a browser wants, by the following optional properties:
 
 - `tunnel` (boolean): browser needs a tunnel to connect to local test server
-- `loopback` (boolean): browser needs a hostname other than `localhost` in order to route 127.0.0.1 traffic through a tunnel.
+- `loopback` (boolean): browser needs a hostname other than `localhost` in order to route 127.0.0.1 traffic through a tunnel
+- `secureEnv` (boolean): browser needs secure environment variables in CI (and is consequently not available on pull requests from forks).
 
 #### `supports`
 
 An optional object describing features supported by a browser, by the following optional properties:
 
 - `headless` (boolean): browser can be configured to be headless (TBD: is this distinct from a root `headless` property that would indicate that the browser is always or never headless?)
+- `concurrency` (boolean, default true): browser can be executed concurrently with others (or other versions of itself)
 
 #### `options`
 
